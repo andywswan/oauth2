@@ -270,6 +270,7 @@ func (tf *tokenRefresher) Token() (*Token, error) {
 	tk, err := retrieveToken(tf.ctx, tf.conf, url.Values{
 		"grant_type":    {"refresh_token"},
 		"refresh_token": {tf.refreshToken},
+		"scope":         {strings.Join(tf.conf.Scopes, " ")}, // added by andywswan for eBay
 	})
 
 	if err != nil {

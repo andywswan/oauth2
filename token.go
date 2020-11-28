@@ -56,6 +56,9 @@ type Token struct {
 
 // Type returns t.TokenType if non-empty, else "Bearer".
 func (t *Token) Type() string {
+	if strings.EqualFold(t.TokenType, "User Access Token") { // eBay
+		return "Bearer"
+	}
 	if strings.EqualFold(t.TokenType, "bearer") {
 		return "Bearer"
 	}
