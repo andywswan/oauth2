@@ -3,12 +3,12 @@
 // license that can be found in the LICENSE file.
 
 // Package endpoints provides constants for using OAuth2 to access various services.
-package endpoints
+package endpoints // import "github.com/andywswan/oauth2/endpoints"
 
 import (
 	"strings"
 
-	"golang.org/x/oauth2"
+	"github.com/andywswan/oauth2"
 )
 
 // Amazon is the endpoint for Amazon.
@@ -27,6 +27,13 @@ var Bitbucket = oauth2.Endpoint{
 var Cern = oauth2.Endpoint{
 	AuthURL:  "https://oauth.web.cern.ch/OAuth/Authorize",
 	TokenURL: "https://oauth.web.cern.ch/OAuth/Token",
+}
+
+// Ebay is the endpoint for eBay.
+var Ebay = oauth2.Endpoint{
+	AuthURL:   "https://auth.ebay.com/oauth2/authorize",
+	TokenURL:  "https://api.ebay.com/identity/v1/oauth2/token",
+	AuthStyle: 2,
 }
 
 // Facebook is the endpoint for Facebook.
