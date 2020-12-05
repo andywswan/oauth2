@@ -1,4 +1,4 @@
-// this fork works with eBay
+// this fork supports eBay
 
 # OAuth2 for Go
 
